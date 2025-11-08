@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vrindavan Royal Vintage Rides | Royal Electric Car Rentals & Safaris</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ---------- RESET & GLOBAL ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fffaf3;
+      color: beige;
+      line-height: 1.7;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      color: #5b0a0a;
+    }
+
+    section {
+      padding: 80px 20%;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* ---------- NAVBAR ---------- */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgb(13,27,42);
+      box-shadow: 0 20px 10px white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 50px;
+      z-index: 1000;
+      transition: all 0.3s;
+    }
+
+    .logo img {
+      height: 50px;
+      width: 60pxs;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-links li a {
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #d4af37;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: #fff;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    /* ---------- HERO SECTION ---------- */
+    header {
+      height: 90vh;
+      background-image: url("./kira.jpg") ;
+      color: maroon; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 5px #222;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      color: navy;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 2px white;
+    }
+
+    header span {
+      font-size: 1.1rem;
+      color: #ddd;
+      margin-bottom: 40px;
+      display: block;
+    }
+
+    .btn {
+      background: linear-gradient(45deg, #8b0000, #b22222);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      margin: 10px;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: linear-gradient(45deg, #b22222, #d4af37);
+      transform: scale(1.05);
+    }
+
+    /* ---------- SECTION LAYOUT ---------- */
+    .content-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .content-section .text {
+      flex: 1;
+    }
+
+    .content-section .image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .content-section .image img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .content-section .image img:hover {
+      transform: scale(1.03);
+    }
+
+    section:nth-child(even) {
+      background-color: beige;
+      color: black;
+    }
+
+    section:nth-child(odd) {
+      background-color: ivory;
+      color: green;
+    }
+
+    /* ---------- TESTIMONIALS ---------- */
+    #testimonials {
+      text-align: center;
+      background: beige;
+    }
+
+    #testimonials p {
+      max-width: 800px;
+      margin: 15px auto;
+      font-style: italic;
+    }
+
+    /* ---------- FAQ ---------- */
+    #faq {
+      background: ivory;
+      text-align: center;
+    }
+
+    #faq div {
+      max-width: 800px;
+      margin: auto;
+      text-align: left;
+    }
+
+    /* ---------- CONTACT SECTION ---------- */
+    .contact {
+      background: #111;
+      color: #fff;
+      text-align: center;
+    }
+
+    .contact form {
+      max-width: 500px;
+      margin: 40px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact input, .contact textarea, .contact select {
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .contact input[type="submit"] {
+      background: #d4af37;
+      color: #000;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact input[type="submit"]:hover {
+      background: #b8860b;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background-color: #222;
+      color: #eee;
+      text-align: center;
+      padding: 25px;
+    }
+
+    footer .social a {
+      margin: 0 10px;
+      color: #fff;
+      font-size: 1.6rem;
+      transition: 0.3s;
+    }
+
+    footer .social a:hover {
+      color: #d4af37;
+      transform: scale(1.1);
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 992px) {
+      .navbar {
+        padding: 15px 25px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: rgba(20, 20, 30, 0.98);
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+
+      .nav-links.show {
+        max-height: 400px;
+        padding: 20px 0;
+      }
+
+      .nav-links li {
+        padding: 15px 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .content-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo"><img src="new.png" alt="Logo" /></div>
+    <button class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#safari">Safari</a></li>
+      <li><a href="#own">Own a Car</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home">
+    <h1>Vrindavan Royal Vintage Rides</h1>
+    <p>Where Every Ride Becomes Royal</p>
+    <span>Vrindavan Safari • Event Rentals • Own a Custom Vintage Electric Car</span>
+    <div>
+      <a href="#contact" class="btn">Book Safari</a>
+      <a href="#own" class="btn">Enquire to Own</a>
+    </div>
+  </header>
+
+  <!-- CELEBRATION -->
+  <section id="celebration">
+    <div class="content-section">
+      <div class="text">
+        <h2>Royal Celebration Rides</h2>
+        <p>Add a majestic touch to your grand moments with our Royal Vintage Electric Cars — perfect for weddings, rallies, and photoshoots. Our cars combine royal elegance with modern electric comfort-turning every arrival into an unforgettable experience.
+          Rent your royal ride today and celebrate in style-at affordable prices that make luxury accessible to everyone.
+        </p>
+      </div>
+      <div class="image">
+        <img src="egh.jpg" alt="Royal Ride" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFARI -->
+  <section id="safari">
+    <div class="content-section">
+      <div class="image">
+        <img src="egh.jpg" alt="Vrindavan Safari" />
+      </div>
+      <div class="text">
+        <h2>Vrindavan Safari</h2>
+        <p>Discover the divine soul of Vrindavan through our 15Km Guided Heritage Safari.
+          Travel peacefully across sacred temples, spiritual lanes, and heritage landmarks in our silent, vintage-style electric cars.
+Capture timeless memories, feel the aura of devotion, and experience spirituality with a royal touch — a ride that connects comfort, culture, and calm.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OWN A CAR -->
+  <section id="own">
+    <div class="content-section">
+      <div class="text">
+        <h2>Own a Royal Electric Car</h2>
+        <p>Bring home your own Royal Vintage Electric Car, designed exactly to your taste.
+Choose your colors, interiors, roof, and royal detailing — crafted to perfection by our expert team.
+Powered by clean electric technology, low maintenance, and eco-friendly, these cars are surprisingly affordable — almost at the price of a bike!
+Own a piece of heritage, modernized for today’s roads.
+</p>
+      </div>
+      <div class="image">
+        <img src="egh.jpg" alt="Custom Vintage Car" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="content-section">
+      <div class="text">
+        <h2>About / Why Us</h2>
+        <p>Vrindavan Royal Vintage Rides is an initiative of Eco Rides Bazaar, a Startup India Recognized company driving sustainable innovation in electric mobility.
+We are proudly mentored and incubated under the Atal Incubation Centre, IM BHU (Banaras Hindu University) — empowering startups working in clean energy and eco-transportation.
+This project unites the grace of heritage with modern technology, offering royal experiences that are elegant, affordable, and environmentally conscious.
+Whether it’s a safari, wedding, or owning your own car, we redefine luxury — the sustainable way.
+</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <h2>⭐ Testimonials</h2>
+    <p>“The perfect royal touch for our wedding — everyone loved it!” – Riya & Aman</p>
+    <p>“Vrindavan Safari was divine and peaceful; the car was beautiful.” – Ashutosh M.</p>
+    <p>“Owning my custom vintage EV feels amazing — eco luxury made real.” – Rohit S.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>❓ FAQ</h2>
+    <div>
+      <p><strong>Q1.</strong> How can I book a ride?<br>Call or fill out the form below — confirmation within 3 hours.</p><br>
+      <p><strong>Q2.</strong> What does the Vrindavan Safari include?<br>A 15 km guided heritage route covering temples and photo stops.</p><br>
+      <p><strong>Q3.</strong> Can I rent for weddings or shoots?<br>Yes, we provide cars for events and photoshoots at affordable rates.</p><br>
+      <p><strong>Q4.</strong> Can I customize the car if I buy one?<br>Absolutely! Choose color, interior, and design.</p><br>
+      <p><strong>Q5.</strong> Are the vehicles safe?<br>Yes — all follow AIS-approved low-speed EV standards.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Contact & Booking</h2>
+    <p>Fill out the form to book your royal ride or enquire about owning a custom car.</p>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <select>
+        <option value="">Select Subject</option>
+        <option>Booking</option>
+        <option>Partner with Us</option>
+        <option>Customize Car</option>
+      </select>
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <input type="submit" value="Send Message" />
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="social">
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/vrindavan_royalrides" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p style="margin-top:10px;">© 2025 Vrindavan Royal Vintage Rides | Powered by Eco Rides Bazaar</p>
+  </footer>
+
+  <!-- JS: NAVBAR TOGGLE -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      const icon = menuBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+  </script>
+</body>
+</html>
